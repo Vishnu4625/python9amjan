@@ -1,0 +1,108 @@
+import datetime
+
+class Admin:
+    def __init__(self, bus_name, total_seats_upper, total_seats_lower):
+        self.bus_name = bus_name
+        # Upper and Lower deck seats
+        self.total_seats_upper = total_seats_upper
+        self.total_seats_lower = total_seats_lower
+        self.booked_seats_upper = 0
+        self.booked_seats_lower = 0
+
+    def show_available_seats(self):
+        print(f"Available Upper Deck Seats: {self.total_seats_upper - self.booked_seats_upper}")
+        print(f"Available Lower Deck Seats: {self.total_seats_lower - self.booked_seats_lower}")
+
+    def update_seat_availability(self, deck, action, num_seats):
+        if deck == 'upper':
+            if action == 'book':
+                self.booked_seats_upper += num_seats
+            elif action == 'cancel':
+                self.booked_seats_upper -= num_seats
+        elif deck == 'lower':
+            if action == 'book':
+                self.booked_seats_lower += num_seats
+            elif action == 'cancel':
+                self.booked_seats_lower -= num_seats
+
+    def show_bus_details(self):
+        print(f"Bus Name: {self.bus_name}")
+        print(f"Total Upper Deck Seats: {self.total_seats_upper}")
+        print(f"Total Lower Deck Seats: {self.total_seats_lower}")
+
+
+class Customer:
+    def __init__(self, name):
+        self.name = name
+        self.booked_seats = {"upper": 0, "lower": 0}
+
+    def book_ticket(self, admin, deck, num_seats):
+        if deck == 'upper' and (admin.total_seats_upper - admin.booked_seats_upper) >= num_seats:
+            admin.update_seat_availability('upper', 'book', num_seats)
+            self.booked_seats['upper'] += num_seats
+            print(f"{num_seats} Upper deck seats booked for {self.name}.")
+        elif deck == 'lower' and (admin.total_seats_lower - admin.booked_seats_lower) >= num_seats:
+            admin.update_seat_availability('lower', 'book', num_seats)
+            self.booked_seats['lower'] += num_seats
+            print(f"{num_seats} Lower deck seats booked for {self.name}.")
+        else:
+            print(f"Not enough {deck} deck seats available to book {num_seats} seats.")
+
+    def cancel_ticket(self, admin, deck, num_seats):
+        if self.booked_seats[deck] >= num_seats:
+            admin.update_seat_availability(deck, 'cancel', num_seats)
+            self.booked_seats[deck] -= num_seats
+            print(f"{num_seats} {deck} deck seats canceled for {self.name}.")
+        else:
+            print(f"You don't have {num_seats} booked {deck} deck seats to cancel.")
+
+
+def show_current_datetime():
+    current_time = datetime.datetime.now()
+    print(f"Current Date and Time: {current_time.strftime('%Y-%m-%d %H:%M:%S')}")
+
+
+def main():
+    # Admin initializes bus details
+    admin = Admin(bus_name="City Express", total_seats_upper=10, total_seats_lower=20)
+    
+    # Show bus details
+    admin.show_bus_details()
+    
+    # Customer interacts
+    customer_name = input("Enter your name: ")
+    customer = Customer(name=customer_name)
+    
+    while True:
+        print("\nMenu:")
+        print("1. Show available seats")
+        print("2. Book a seat (Upper or Lower)")
+        print("3. Cancel a ticket")
+        print("4. Show current date and time")
+        print("5. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == '1':
+            admin.show_available_seats()
+        elif choice == '2':
+            show_current_datetime()
+            deck = input("Enter the deck (upper/lower): ").lower()
+            num_seats = int(input(f"Enter number of {deck} deck seats to book: "))
+            customer.book_ticket(admin, deck, num_seats)
+        elif choice == '3':
+            show_current_datetime()
+            deck = input("Enter the deck (upper/lower): ").lower()
+            num_seats = int(input(f"Enter number of {deck} deck seats to cancel: "))
+            customer.cancel_ticket(admin, deck, num_seats)
+        elif choice == '4':
+            show_current_datetime()
+        elif choice == '5':
+            print("Thank you for using the Bus Ticket Booking System!")
+            break
+        else:
+            print("Invalid choice, please try again.")
+
+
+if __name__ == "__main__":
+    main()

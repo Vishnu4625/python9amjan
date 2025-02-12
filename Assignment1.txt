@@ -1,0 +1,171 @@
+#1. Print User's Name
+name = input('Enter User Name:')
+print('Hello,',name,'!')
+
+Output:-
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter User Name:Vishnu
+Hello, Vishnu !
+
+#2. Add Two Numbers
+a = int(input('Enter first number for addition:'))
+b = int(input('Enter second number for addition:'))
+print('Addition of',a,'and',b,'is',a+b)
+
+Output:-
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter first number for addition:12
+Enter second number for addition:5
+Addition of 12 and 5 is 17
+
+#3. Square of a Number
+num = int(input('Enter a number:'))
+print('Square of',num,'is',num*num)
+
+Output:-
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter a number:6
+Square of 6 is 36
+
+#4. Check Even or Odd
+num = int(input('Enter a number:'))
+if (num%2)==0:
+  print(num,'is an even number')
+else:
+   print(num,'is an odd number')
+
+Output:-
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter a number:23
+23 is an odd number
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter a number:44
+44 is an even number
+
+#5. Compare Two Numbers
+a = int(input('Enter first number:'))
+b = int(input('Enter second number:'))
+if (a==b):
+   print('First Number is equal to second number')
+elif (a>b):
+   print('First number is greater than second number')
+else:
+   print('First number is less than second number')
+
+Output:-
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter first number:5
+Enter second number:5
+First Number is equal to second number
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter first number:6
+Enter second number:5
+First number is greater than second number
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter first number:45
+Enter second number:55
+First number is less than second number
+
+#6. Simple Calculator
+num1 = int(input('Enter first number:'))
+num2 = int(input('Enter second number:'))
+oper = input('Enter operator:')
+if (oper=='+'):
+   print('Addition of',num1,'&',num2,'is',(num1+num2))
+elif (oper=='-'):
+   print('Substraction of',num1,'&',num2,'is',(num1-num2))
+elif (oper=='*'):
+   print('Multiplication of',num1,'&',num2,'is',(num1*num2))
+elif (oper=='/'):
+   print('Division of',num1,'&',num2,'is',(num1/num2))
+else:
+   print('Invalid operator, enter correct operator +,-,*,/')
+
+Output:-
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter first number:5
+Enter second number:3
+Enter operator:+
+Addition of 5 & 3 is 8
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter first number:5
+Enter second number:3
+Enter operator:-
+Substraction of 5 & 3 is 2
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter first number:5
+Enter second number:3
+Enter operator:*
+Multiplication of 5 & 3 is 15
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter first number:5
+Enter second number:3
+Enter operator:/
+Division of 5 & 3 is 1.6666666666666667
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter first number:5
+Enter second number:3
+Enter operator:%
+Invalid operator, enter correct operator +,-,*,/
+
+#7. Find Remainder and Quotient
+num1 = int(input('Enter first number:'))
+num2 = int(input('Enter second number:'))
+print('Quotient is:',(num1//num2))
+print('Remainder is:',(num1%num2))
+
+Output:-
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter first number:516
+Enter second number:8
+Quotient is: 64
+Remainder is: 4
+
+#8. Logical Operation Check
+a = input('First Boolean Value:')
+b = input('Second Boolean Value:')
+if a and b == 'true':
+    print('Both a & b are True')
+if a or b =='true':
+    print('Either a or b is True')
+print(not b)
+
+Output:-
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+First Boolean Value:true
+Second Boolean Value:true
+Both a & b are True
+Either a or b is True
+False
+
+#9. Membership Check in a String
+str = input('Enter the string:')
+char = input('Enter the character to check:')
+for x in range(len(str)):
+    if str[x] == char:
+        print('Char',char,'found at index',x)
+    else:
+        print('Char',char,'not found at index',x)
+
+Output:-
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter the string:vishnu
+Enter the character to check:s
+Char s not found at index 0
+Char s not found at index 1
+Char s found at index 2
+Char s not found at index 3
+Char s not found at index 4
+Char s not found at index 5
+
+#10. Sum of Digits
+num = int(input('Enter a multi digit number:'))
+sum = 0
+for x in str(num):
+    sum = sum+int(x)
+print('Sum of multi digit',num,'is',sum)
+
+Output:-
+PS E:\pythondevelopers> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.9.exe e:/python9amjan/Assignment1.py
+Enter a multi digit number:811
+Sum of multi digit 811 is 10
