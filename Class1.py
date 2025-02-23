@@ -24,5 +24,7 @@ class Demo:
     def show(self):
         for x in range(4):
             print(x)
-d1=Demo()
-d1.show()
+vishnu=Demo()
+vishnu.show()
+# d1.show()
+# d1.show()
