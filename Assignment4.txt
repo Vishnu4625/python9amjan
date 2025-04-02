@@ -108,3 +108,54 @@ Output:-
 PS E:\python9amjan> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.13.exe e:/python9amjan/Assignment4.py
 Enter the number:256
 256 is a perfect square of 16
+
+# 7 check given triangle is equilateral,isosceles,scalene
+x=int(input('Enter 1st side value of triangle:'))
+y=int(input('ENter 2nd side value of triangle:'))
+z=int(input('Enter 3rd side value of triangle:'))
+if x==y==z:
+    print('Triangle is an Equilateral triangle')
+elif x==y or y==z:
+    print('Triangle is an Isosceles triangle')
+else:
+    print('Triangle is a Scalene triangle')
+
+Output:-
+PS C:\Users\User> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.13.exe e:/python9amjan/Assignment4.py
+Enter 1st side value of triangle:25
+ENter 2nd side value of triangle:25
+Enter 3rd side value of triangle:25
+Triangle is an Equilateral triangle
+PS C:\Users\User> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.13.exe e:/python9amjan/Assignment4.py
+Enter 1st side value of triangle:25
+ENter 2nd side value of triangle:25
+Enter 3rd side value of triangle:18
+Triangle is an Isosceles triangle
+PS C:\Users\User> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.13.exe e:/python9amjan/Assignment4.py
+Enter 1st side value of triangle:18
+ENter 2nd side value of triangle:25
+Enter 3rd side value of triangle:25
+Triangle is an Isosceles triangle
+PS C:\Users\User> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.13.exe e:/python9amjan/Assignment4.py
+Enter 1st side value of triangle:16
+ENter 2nd side value of triangle:18
+Enter 3rd side value of triangle:25
+Triangle is a Scalene triangle
+
+# 8 given string starts with a vowel or consonant
+vowel='aieouAEIOU'
+str=input('Enter the string:')
+if str[0] in vowel:
+    print('String star with vowel')
+else:
+    print('String start with consonant')
+
+Output:-
+PS C:\Users\User> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.13.exe e:/python9amjan/Assignment4.py
+Enter the string:i am vishnu
+String star with vowel
+PS C:\Users\User> & C:/Users/User/AppData/Local/Microsoft/WindowsApps/python3.13.exe e:/python9amjan/Assignment4.py
+Enter the string:My name is vishnu
+String start with consonant
+
+

@@ -44,15 +44,37 @@
 
 # overridding
 
-class show:
-    def add(self):
-        a,b =10,20
-        c=a+b
-        print(c)
-class demo(show):
-    def add(self):
-        a,b = 100,30
-        c=a+b
-        print(c)
-d1=demo()
-d1.add()
+# class show:
+#     def add(self):
+#         a,b =10,20
+#         c=a+b
+#         print(c)
+# class demo(show):
+#     def add(self):
+#         a,b = 100,30
+#         c=a+b
+#         print(c)
+# d1=demo()
+# d1.add()
+
+# class Alpha:
+#     def fun(self):
+#         print('Alpha class fun()')
+#     print(dir('Alpha'))
+
+# Super
+class Customer:
+    def __init__(self,name,ph,email):
+        self.name=name
+        self.ph=ph
+        self.email=email
+class PlatinumCustomer(Customer):
+    def __init__(self, name, ph, email, plat_id):
+        super().__init__(name, ph, email)
+        self.plat_id=plat_id
+
+    def display(self):
+        print(self.__dict__)
+
+p=PlatinumCustomer('Vishnu',1234567890,'vishnu@gmail.com',10)
+p.display()

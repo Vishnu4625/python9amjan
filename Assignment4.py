@@ -39,5 +39,21 @@
 #     else:
 #         continue
 # 7 check given triangle is equilateral,isosceles,scalene
-x=int(input('Enter a side value of triangle:'))
-y=int(input(''))
+# x=int(input('Enter 1st side value of triangle:'))
+# y=int(input('ENter 2nd side value of triangle:'))
+# z=int(input('Enter 3rd side value of triangle:'))
+# if x==y==z:
+#     print('Triangle is an Equilateral triangle')
+# elif x==y or y==z:
+#     print('Triangle is an Isosceles triangle')
+# else:
+#     print('Triangle is a Scalene triangle')
+
+# 8 given string starts with a vowel or consonant
+# vowel='aieouAEIOU'
+# str=input('Enter the string:')
+# if str[0] in vowel:
+#     print('String star with vowel')
+# else:
+#     print('String start with consonant')
+
